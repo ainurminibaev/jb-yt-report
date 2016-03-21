@@ -12,7 +12,7 @@ angular.module('myApp.login', ['ngRoute'])
     .controller('LoginCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         $scope.login = function (user) {
             $http({
-                url: 'http://jetbrainslab.it.kpfu.ru:8112/rest/user/login',
+                url: 'http://youtrack.jblab-kzn.ru/rest/user/login',
                 method: 'post',
                 data: 'login=' + user.login + '&password=' + user.password,
                 headers: {
