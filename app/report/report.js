@@ -46,7 +46,7 @@ angular.module('myApp.report', ['ngRoute'])
             closed_begin: firstDay,
             closed_end: lastDay
         };
-        $http.get('http://jetbrainslab.it.kpfu.ru:8112/rest/project/all')
+        $http.get('http://youtrack.jblab-kzn.ru:8112/rest/project/all')
             .success(function (response) {
                 $scope.projects = response;
             })
