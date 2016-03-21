@@ -68,7 +68,7 @@ angular.module('myApp.report', ['ngRoute'])
                 if (time.closed_begin || time.closed_end)
                     filter += ' resolved date: ' + formatDateRange(time.closed_begin, time.closed_end);
                 (project ? (filter += ' project: ' + project) : {});
-                $http.get('http://jetbrainslab.it.kpfu.ru:8112/rest/issue' + '?with=id&with=summary&with=Assignee&with=Max Point&with=Total point&max=500&after=' + after + filter)
+                $http.get('http://youtrack.jblab-kzn.ru/rest/issue' + '?with=id&with=summary&with=Assignee&with=Max Point&with=Total point&max=500&after=' + after + filter)
                     .success(function (response) {
                         response.issue.forEach(function (value) {
                             var maxPoint = -1, totalPoint = -1;
