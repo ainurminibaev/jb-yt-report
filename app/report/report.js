@@ -64,9 +64,9 @@ angular.module('myApp.report', ['ngRoute'])
             function getIssues(after) {
                 var filter = "&filter=";
                 if (time.created_begin || time.created_end)
-                    filter += 'создана: ' + formatDateRange(time.created_begin, time.created_end);
+                    filter += 'created: ' + formatDateRange(time.created_begin, time.created_end);
                 if (time.closed_begin || time.closed_end)
-                    filter += ' дата завершения: ' + formatDateRange(time.closed_begin, time.closed_end);
+                    filter += ' resolved date: ' + formatDateRange(time.closed_begin, time.closed_end);
                 (project ? (filter += ' project: ' + project) : {});
                 $http.get('http://youtrack.jblab-kzn.ru/rest/issue' + '?with=id&with=summary&with=Assignee&with=Max Point&with=Total point&max=500&after=' + after + filter)
                     .success(function (response) {
